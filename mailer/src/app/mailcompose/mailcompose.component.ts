@@ -20,27 +20,38 @@ export class MailComposeComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
+var emailAddress:String=this.email_address.nativeElement.value
+var emailSubject:String=this.email_subject.nativeElement.value
+var emailMessage:String=this.email_message.nativeElement.value
 
-    if(this.email_message.nativeElement.value===empty){
-      this.email_message.nativeElement.value="Good wishes from team RawData"
+
+
+   
+    if(emailSubject==null||emailSubject===" "||emailSubject==""){
+      emailSubject="Wishes"
     }
-    if(this.email_subject.nativeElement.value===empty){
-      this.email_subject.nativeElement.value="Wishes"
+    if(emailMessage==null||emailMessage===" "||emailMessage==""){
+      emailMessage="Good wishes from team RawData"
     }
- 
-      
-      Email.send({
+  
+    if(emailSubject==null||emailSubject===" "||emailSubject==""){
+     
+    }else{
+    Email.send({
         Host : "smtp.elasticemail.com",
         Username : "indu@rawdatatech.com",
         Password : "6A22260680F50D0E36C024E77F11A5B8EFC2",
-        To : "binush@rawdatatech.com",
+        To : emailAddress,
         From : "indu@rawdatatech.com",
-        Subject : "this is subject",
-        Body : "this is message"
+        Subject : emailSubject,
+        Body :  emailMessage
     }).then(
       message => alert(message)
     )
-    
+
+    }
+      
+      
   }
 
 }

@@ -18,10 +18,12 @@
     <!-- from start -->
     <form class="gform pure-form pure-form-stacked">
         <div class="form-elements">
+            <button  class=" pure-button " >Clear</button>
+                
             <!-- Email address -->
             <fieldset class="pure-group">
                 <label for="email"> Email Address:</label>
-                <input id="email" name="email" type="email" value="" required placeholder="email@email.com" #email_address/>
+                <input id="email" name="email"  value=""  placeholder="email@email.com" #email_address/>
             </fieldset>
 
             <!-- Email Subject -->
@@ -35,10 +37,12 @@
                 <label for="message">Message: </label>
                 <textarea id="message" name="message" rows="10" placeholder="Message..." #email_message></textarea>
             </fieldset>
-            <button  class="button-success pure-button button-xlarge" (click)="onSubmit()">
-                <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+           
         </div>
     </form>
+
+    <button  class="button-success pure-button button-xlarge" (click)="onSubmit()">
+        <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
     <!-- END -->
 </body>
 
