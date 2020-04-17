@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="contact form example">
+    <title>Contact Form Example</title>
+</head>
+
+<body>
+
+    <aside>
+        <h2 class="content-head is-center">Compose Mail</h2>
+    </aside>
+
+    <!-- START HERE -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+ 
+    <form class="gform pure-form pure-form-stacked">
+        <!-- change the form action to your script url -->
+
+
+
+        <div class="form-elements">
+
+            <fieldset class="pure-group">
+                <label for="email"> Email Address:</label>
+                <input id="email" name="email" type="email" value="" required placeholder="email@email.com" />
+            </fieldset>
+
+
+            <fieldset class="pure-group">
+                <label for="subject">Subject : </label>
+                <input id="subject" name="subject" placeholder="Subject" />
+            </fieldset>
+
+            <fieldset class="pure-group">
+                <label for="message">Message: </label>
+                <textarea id="message" name="message" rows="10" placeholder="Message..."></textarea>
+            </fieldset>
+
+
+            <button id="submit_button"class="button-success pure-button button-xlarge">
+                <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+        </div>
+
+
+
+    </form>
+
+    <!-- END -->
+
+    <script >
+    
+</script>
+
+
+<script src="https://smtpjs.com/v3/smtp.js">
+    $(function() { 
+        $('submit_button').click( function() { 
+            Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "indu@rawdatatech.com",
+    Password : "6A22260680F50D0E36C024E77F11A5B8EFC2",
+    To : 'binush@indu@rawdatatech.com',
+    From : "indu@rawdatatech.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+)
+        });
+    });
+ </script>
+
+
+</body>
+
+</html>
